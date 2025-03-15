@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern E-Commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-cyan-600">ShopEase</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-cyan-600"><i class="bi bi-search"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-cyan-600"><i class="bi bi-person"></i></a>
+                    <div class="relative">
+                        <a href="#" class="text-gray-600 hover:text-cyan-600">
+                            <i class="bi bi-cart"></i>
+                            <span class="absolute -top-2 -right-2 bg-cyan-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-cyan-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-4">Summer Sale Is Live</h1>
+                <p class="text-xl mb-8">Up to 50% off on selected items</p>
+                <button class="bg-white text-cyan-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                    Shop Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-8">Shop by Category</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition-shadow">
+                <i class="bi bi-laptop text-4xl text-cyan-600"></i>
+                <p class="mt-2 font-medium">Electronics</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition-shadow">
+                <i class="bi bi-lightning text-4xl text-cyan-600"></i>
+                <p class="mt-2 font-medium">Fashion</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition-shadow">
+                <i class="bi bi-house text-4xl text-cyan-600"></i>
+                <p class="mt-2 font-medium">Home</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center cursor-pointer hover:shadow-md transition-shadow">
+                <i class="bi bi-basket text-4xl text-cyan-600"></i>
+                <p class="mt-2 font-medium">Beauty</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-8">Featured Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Product Cards -->
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold mb-4">Subscribe to our Newsletter</h2>
+                <p class="text-gray-600 mb-6">Get updates about new products and special offers</p>
+                <div class="max-w-md mx-auto">
+                    <div class="flex">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-l-lg border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-600">
+                        <button class="bg-cyan-600 text-white px-6 py-2 rounded-r-lg hover:bg-cyan-700 transition-colors">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample product data
+        const products = [
+            {
+                name: "Wireless Headphones",
+                price: 99.99,
+                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80",
+                category: "Electronics"
+            },
+            {
+                name: "Smart Watch",
+                price: 199.99,
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80",
+                category: "Electronics"
+            },
+            {
+                name: "Running Shoes",
+                price: 89.99,
+                image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80",
+                category: "Fashion"
+            },
+            {
+                name: "Backpack",
+                price: 49.99,
+                image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80",
+                category: "Fashion"
+            }
+        ];
+
+        // Render products
+        const productsContainer = document.querySelector('.grid');
+        products.forEach(product => {
+            const productCard = `
+                <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">${product.name}</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-cyan-600 font-bold">$${product.price}</span>
+                            <button class="bg-cyan-600 text-white px-4 py-2 rounded-full text-sm hover:bg-cyan-700 transition-colors">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            productsContainer.innerHTML += productCard;
+        });
+
+        // Cart functionality
+        let cartCount = 0;
+        document.querySelectorAll('.product-card button').forEach(button => {
+            button.addEventListener('click', () => {
+                cartCount++;
+                document.querySelector('.bi-cart + span').textContent = cartCount;
+            });
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
